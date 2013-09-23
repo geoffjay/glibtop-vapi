@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+bld.program(
+    packages    = 'libgtop-2.0',
+    target      = 'cpu',
+    uselib      = 'GLIB GTOP',
+    source      = ['cpu.vala'],
+    vapi_dirs   = ['../']
+)
