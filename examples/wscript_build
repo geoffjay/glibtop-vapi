@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 bld.program(
-    packages    = 'libgtop',
+    packages    = 'libgtop-2.0',
     target      = 'cpu',
     uselib      = 'GLIB GTOP',
     source      = ['cpu.vala'],

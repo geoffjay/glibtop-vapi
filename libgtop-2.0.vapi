@@ -85,7 +85,7 @@ namespace GTop {
 		public void set_parameter_l (uint parameter, void* data_ptr, ulong data_size);
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_command", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/command.h", cname = "glibtop_command", has_type_id = false)]
 	public struct Command {
 		public uint64 command;
 		public uint64 size;
@@ -94,7 +94,7 @@ namespace GTop {
 		public weak char[] parameter;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_cpu", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/cpu.h", cname = "glibtop_cpu", has_type_id = false)]
 	public struct Cpu {
 		public uint64 flags;
 		public uint64 total;
@@ -125,14 +125,14 @@ namespace GTop {
 		public uint64 xcpu_flags;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_entry", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/sysinfo.h", cname = "glibtop_entry", has_type_id = false)]
 	public struct Entry {
 		public weak GLib.GenericArray<void*> labels;
 		public weak GLib.HashTable<void*,void*> values;
 		public weak GLib.HashTable<void*,void*> descriptions;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_fsusage", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/fsusage.h", cname = "glibtop_fsusage", has_type_id = false)]
 	public struct FsUsage {
 		public uint64 flags;
 		public uint64 blocks;
@@ -145,7 +145,7 @@ namespace GTop {
 		public uint64 write;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_loadavg", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/loadavg.h", cname = "glibtop_loadavg", has_type_id = false)]
 	public struct LoadAvg {
 		public uint64 flags;
 		[CCode (array_length = false, array_null_terminated = true)]
@@ -155,7 +155,7 @@ namespace GTop {
 		public uint64 last_pid;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_map_entry", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procmap.h", cname = "glibtop_map_entry", has_type_id = false)]
 	public struct MapEntry {
 		public uint64 flags;
 		public uint64 start;
@@ -174,7 +174,7 @@ namespace GTop {
 		public weak char[] filename;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_mem", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/mem.h", cname = "glibtop_mem", has_type_id = false)]
 	public struct Memory {
 		public uint64 flags;
 		public uint64 total;
@@ -187,7 +187,7 @@ namespace GTop {
 		public uint64 locked;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_mountentry", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/mountlist.h", cname = "glibtop_mountentry", has_type_id = false)]
 	public struct MountEntry {
 		public uint64 dev;
 		[CCode (array_length = false, array_null_terminated = true)]
@@ -198,7 +198,7 @@ namespace GTop {
 		public weak char[] type;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_mountlist", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/mountlist.h", cname = "glibtop_mountlist", has_type_id = false)]
 	public struct MountList {
 		public uint64 flags;
 		public uint64 number;
@@ -206,7 +206,7 @@ namespace GTop {
 		public uint64 size;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_msg_limits", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/msg_limits.h", cname = "glibtop_msg_limits", has_type_id = false)]
 	public struct MsgLimits {
 		public uint64 flags;
 		public uint64 msgpool;
@@ -218,13 +218,13 @@ namespace GTop {
 		public uint64 msgtql;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_netlist", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/netlist.h", cname = "glibtop_netlist", has_type_id = false)]
 	public struct NetList {
 		public uint64 flags;
 		public uint32 number;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_netload", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/netload.h", cname = "glibtop_netload", has_type_id = false)]
 	public struct NetLoad {
 		public uint64 flags;
 		public uint64 if_flags;
@@ -250,8 +250,8 @@ namespace GTop {
 		public weak uint8[] hwaddress;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_open_files_entry", has_type_id = false)]
-	public struct glibtop_open_files_entry {
+	[CCode (cheader_filename = "glibtop/procopenfiles.h", cname = "glibtop_open_files_entry", has_type_id = false)]
+	public struct OpenFilesEntry {
 		public int fd;
 		public uint16 type;
 		[CCode (array_length = false, array_null_terminated = true, cname = "info.sock.dest_host")]
@@ -264,7 +264,7 @@ namespace GTop {
 		public weak char[] info_localsock_name;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_ppp", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/ppp.h", cname = "glibtop_ppp", has_type_id = false)]
 	public struct Ppp {
 		public uint64 flags;
 		public uint64 state;
@@ -272,20 +272,20 @@ namespace GTop {
 		public uint64 bytes_out;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_affinity", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procaffinity.h", cname = "glibtop_proc_affinity", has_type_id = false)]
 	public struct ProcAffinity {
 		public uint64 flags;
 		public uint32 number;
 		public bool all;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_args", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procargs.h", cname = "glibtop_proc_args", has_type_id = false)]
 	public struct ProcArgs {
 		public uint64 flags;
 		public uint64 size;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_kernel", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/prockernel.h", cname = "glibtop_proc_kernel", has_type_id = false)]
 	public struct ProcKernel {
 		public uint64 flags;
 		public uint64 k_flags;
@@ -300,7 +300,7 @@ namespace GTop {
 		public weak char[] wchan;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_map", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procmap.h", cname = "glibtop_proc_map", has_type_id = false)]
 	public struct ProcMap {
 		public uint64 flags;
 		public uint64 number;
@@ -308,7 +308,7 @@ namespace GTop {
 		public uint64 size;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_mem", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procmem.h", cname = "glibtop_proc_mem", has_type_id = false)]
 	public struct ProcMem {
 		public uint64 flags;
 		public uint64 size;
@@ -319,7 +319,7 @@ namespace GTop {
 		public uint64 rss_rlim;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_open_files", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procopenfiles.h", cname = "glibtop_proc_open_files", has_type_id = false)]
 	public struct ProcOpenFiles {
 		public uint64 flags;
 		public uint64 number;
@@ -327,7 +327,7 @@ namespace GTop {
 		public uint64 size;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_segment", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procsegment.h", cname = "glibtop_proc_segment", has_type_id = false)]
 	public struct ProcSegment {
 		public uint64 flags;
 		public uint64 text_rss;
@@ -340,7 +340,7 @@ namespace GTop {
 		public uint64 start_stack;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_signal", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procsignal.h", cname = "glibtop_proc_signal", has_type_id = false)]
 	public struct ProcSignal {
 		public uint64 flags;
 		[CCode (array_length = false, array_null_terminated = true)]
@@ -353,7 +353,7 @@ namespace GTop {
 		public weak uint64[] sigcatch;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_state", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procstate.h", cname = "glibtop_proc_state", has_type_id = false)]
 	public struct ProcState {
 		public uint64 flags;
 		[CCode (array_length = false, array_null_terminated = true)]
@@ -368,7 +368,7 @@ namespace GTop {
 		public int last_processor;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_time", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/proctime.h", cname = "glibtop_proc_time", has_type_id = false)]
 	public struct ProcTime {
 		public uint64 flags;
 		public uint64 start_time;
@@ -386,7 +386,7 @@ namespace GTop {
 		public weak uint64[] xcpu_stime;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_uid", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procuid.h", cname = "glibtop_proc_uid", has_type_id = false)]
 	public struct ProcUid {
 		public uint64 flags;
 		public int32 uid;
@@ -410,7 +410,7 @@ namespace GTop {
 		public weak int32[] groups;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proc_wd", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/procwd.h", cname = "glibtop_proc_wd", has_type_id = false)]
 	public struct ProcWd {
 		public uint64 flags;
 		public uint32 number;
@@ -420,7 +420,7 @@ namespace GTop {
 		public weak char[] exe;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_proclist", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/proclist.h", cname = "glibtop_proclist", has_type_id = false)]
 	public struct ProcList {
 		public uint64 flags;
 		public uint64 number;
@@ -428,7 +428,7 @@ namespace GTop {
 		public uint64 size;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_response", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/command.h", cname = "glibtop_response", has_type_id = false)]
 	public struct Response {
 		public int64 offset;
 		public uint64 size;
@@ -436,13 +436,13 @@ namespace GTop {
 		public GTop.ResponseUnion u;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_response_union")]
+	[CCode (cheader_filename = "glibtop/command.h", cname = "glibtop_response_union")]
 	public struct ResponseUnion {
 		public GTop.Union data;
 		public GTop.SysDeps sysdeps;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_sem_limits", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/sem_limits.h", cname = "glibtop_sem_limits", has_type_id = false)]
 	public struct SemLimits {
 		public uint64 flags;
 		public uint64 semmap;
@@ -457,7 +457,7 @@ namespace GTop {
 		public uint64 semaem;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_shm_limits", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/shm_limits.h", cname = "glibtop_shm_limits", has_type_id = false)]
 	public struct ShmLimits {
 		public uint64 flags;
 		public uint64 shmmax;
@@ -467,14 +467,14 @@ namespace GTop {
 		public uint64 shmall;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_signame", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/signal.h", cname = "glibtop_signame", has_type_id = false)]
 	public struct SigName {
 		public int number;
 		public weak string name;
 		public weak string label;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_swap", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/swap.h", cname = "glibtop_swap", has_type_id = false)]
 	public struct Swap {
 		public uint64 flags;
 		public uint64 total;
@@ -484,7 +484,7 @@ namespace GTop {
 		public uint64 pageout;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_sysdeps", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/sysdeps.h", cname = "glibtop_sysdeps", has_type_id = false)]
 	public struct SysDeps {
 		public uint64 flags;
 		public uint64 features;
@@ -516,7 +516,7 @@ namespace GTop {
 		public uint64 proc_affinity;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_sysinfo", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/sysinfo.h", cname = "glibtop_sysinfo", has_type_id = false)]
 	public struct SysInfo {
 		public uint64 flags;
 		public uint64 ncpu;
@@ -524,7 +524,7 @@ namespace GTop {
 		public weak GTop.Entry[] cpuinfo;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_union")]
+	[CCode (cheader_filename = "glibtop/union.h", cname = "glibtop_union")]
 	public struct Union {
 		public GTop.Cpu cpu;
 		public GTop.Memory mem;
@@ -554,7 +554,7 @@ namespace GTop {
 		public GTop.ProcAffinity proc_affinity;
 	}
 
-	[CCode (cheader_filename = "glibtop.h", cname = "glibtop_uptime", has_type_id = false)]
+	[CCode (cheader_filename = "glibtop/uptime.h", cname = "glibtop_uptime", has_type_id = false)]
 	public struct Uptime {
 		public uint64 flags;
 		public double uptime;
